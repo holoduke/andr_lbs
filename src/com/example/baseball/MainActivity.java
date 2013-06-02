@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
+	String a = "test";
 	ListView list;
 	LazyAdapter adapter;
 	
