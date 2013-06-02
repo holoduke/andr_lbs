@@ -6,11 +6,10 @@ import android.view.Menu;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
-
 	String a = "test";
 	ListView list;
 	LazyAdapter adapter;
-	
+	String b = "jajajajajajaa keihard penis in je oor";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
