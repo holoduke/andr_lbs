@@ -29,11 +29,6 @@ import org.json.JSONObject;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -43,72 +38,18 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
 
-public class MainActivity extends FragmentActivity implements OnClickListener, OnItemClickListener {
+public class DetailActivity extends Activity implements OnClickListener, OnItemClickListener {
 	
 	ListView list;
 	LazyAdapter adapter;
 	ViewFlipper flipper;
 	
-	FragmentManager fm;
-	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.detail);
         
-        fm = getSupportFragmentManager();
-        
-        
-       // flipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
-       // flipper.setOnClickListener(this);
-        
-
-        
-        Log.v("test", "test starting app");
-        
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        
-        if (savedInstanceState == null){
-	        Fragment f = new Fragment01();
-	        ft.add(R.id.layout, f);
-	        ft.commit();
-        }
-        
-        this.onClick(this);
-        
-//        try {	
-//            JSONArray jsonArray = new JSONArray(readScoresFeed());
-//            Log.v("test","test Number of entries " + jsonArray.length());
-//            for (int i = 0; i < jsonArray.length(); i++) {
-//              JSONObject jsonObject = jsonArray.getJSONObject(i);
-//              Log.i("test", jsonObject.getString("text"));
-//            }
-//          } catch (Exception e) {
-//            e.printStackTrace();
-//          }
-//        
-       // this.onClick(this);
-        
-        //list = (ListView)findViewById(R.id.listViewScores);
-        //list.setOnItemClickListener(this);
-        
-        Log.i("test", "clickwwwwwss");
-     
-     //   adapter = new LazyAdapter(this, mStrings);
-       // list.setAdapter(adapter);
-    }
-    
-    public void test(){
-    	Log.i("test","ja het werkt");
-    	
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up,R.anim.slide_in_down,R.anim.slide_out_down);
-        Fragment f = new Fragment02();
-        ft.replace(R.id.layout, f);
-        ft.addToBackStack(null);
-        ft.commit();
-    	
+        Log.i("test","starting appppppp2");
     }
     
 	private void onClick(MainActivity mainActivity) {
@@ -274,10 +215,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener, O
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 		Log.i("test","clicker de click");
-		Intent intent = new Intent(getApplicationContext(),DetailActivity.class);
-		startActivity(intent);
-	       overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-		///flipper.showNext();
+		flipper.showNext();
 	}
 
     
