@@ -10,9 +10,13 @@ package com.example.baseball;
 public final class R {
     public static final class anim {
         public static final int slide_in_down=0x7f040000;
-        public static final int slide_in_up=0x7f040001;
-        public static final int slide_out_down=0x7f040002;
-        public static final int slide_out_up=0x7f040003;
+        public static final int slide_in_left=0x7f040001;
+        public static final int slide_in_right=0x7f040002;
+        public static final int slide_in_up=0x7f040003;
+        public static final int slide_out_down=0x7f040004;
+        public static final int slide_out_left=0x7f040005;
+        public static final int slide_out_right=0x7f040006;
+        public static final int slide_out_up=0x7f040007;
     }
     public static final class attr {
     }
@@ -34,17 +38,18 @@ public final class R {
         public static final int action_settings=0x7f090005;
         public static final int image=0x7f090002;
         public static final int layout=0x7f090000;
+        public static final int list2=0x7f090001;
         public static final int text=0x7f090003;
         public static final int textView1=0x7f090004;
-        public static final int textView122=0x7f090001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int detail=0x7f030001;
-        public static final int fragment_02=0x7f030002;
-        public static final int fragment_listview=0x7f030003;
-        public static final int item=0x7f030004;
-        public static final int start_fragment=0x7f030005;
+        public static final int fragment_league_detail=0x7f030002;
+        public static final int fragment_league_listview=0x7f030003;
+        public static final int fragment_league_standings=0x7f030004;
+        public static final int item=0x7f030005;
+        public static final int start_fragment=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f080000;

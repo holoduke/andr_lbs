@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener, O
         FragmentTransaction ft = fm.beginTransaction();
         
         if (savedInstanceState == null){
-	        Fragment f = new Fragment01();
+	        Fragment f = new LeagueListFragment();
 	        ft.add(R.id.layout, f);
 	        ft.commit();
         }
@@ -99,16 +99,24 @@ public class MainActivity extends FragmentActivity implements OnClickListener, O
        // list.setAdapter(adapter);
     }
     
-    public void test(){
+    public void showLeagueDetails(){
     	Log.i("test","ja het werkt");
     	
         FragmentTransaction ft = fm.beginTransaction();
         ft.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up,R.anim.slide_in_down,R.anim.slide_out_down);
-        Fragment f = new Fragment02();
+        Fragment f = new LeagueDetailFragment();
         ft.replace(R.id.layout, f);
         ft.addToBackStack(null);
-        ft.commit();
-    	
+        ft.commit();  	
+    }
+    
+    public void showLeagueStandings(){
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_right,R.anim.slide_in_left,R.anim.slide_out_left);
+        Fragment f = new LeagueStandingsFragment();
+        ft.replace(R.id.layout, f);
+        ft.addToBackStack(null);
+        ft.commit();     	
     }
     
 	private void onClick(MainActivity mainActivity) {
